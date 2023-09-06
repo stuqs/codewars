@@ -1,0 +1,45 @@
+I recommend you complete the previous version of this kata before trying this one.
+
+After slacking off at your last job as a security guard you were fired and decided to get a position as a janitor at NASA.
+Your job is to clean the messes made by people that bump into each other and drop items.
+You decide to use the skills you gained in your last job (the same skills that got you fired lol),
+but this time instead of playing around you want to use them to make your job easier by figuring out if you need to
+go to a room ahead of time and which rooms to prioritize first.
+
+You will be given a room within the facility (matrix of chars) with people walking up, right, down, and left
+all labeled u, r, d, and l respectively, all taking steps at the same time in their respective directions.
+Your task is to return the minimum amount of steps it will take until someone collides or if nobody collides return -1.
+
+A step represents a person moving one - in their respective direction, each person moves 1 step at a time
+
+People can walk off the grid, they will not loop around
+
+Here are some examples of rooms and minimum steps
+
+Return 1, because d and l collide after 1 step
+-r--l         --rl-
+-----         -u---
+-u-d-         -----
+----l         ---X-
+----- becomes -----
+Return -1, because nobody will collide
+-u---         ---uu         -----         -----
+---uu         -----         -----         -----
+---r-         ----r         -----         -----
+--r--         ---r-         ----r         -----
+-d--- becomes ----- becomes ----- becomes ----- Thus nobody collided
+If people pass each other on the same row/column (A person moving up passing a person moving down in the same column or
+a person moving right passing a person moving left in the same row), that is treated as a collision.
+
+They collided after 2 steps here
+--r--l-- -> ---rl--- -> ---lr---
+This counts as a collision after 1 step as well
+--          ---
+-d-         -u-
+-u-         -d-
+--- becomes ---
+However in cases like these there are no collisions
+----          -u-- |  ----         ----
+-ur-          ---r |  -dl-         -lu-
+-ld-          l--- |  -ru-         -dr-
+---- becomes  --d- |  ---- becomes ----
