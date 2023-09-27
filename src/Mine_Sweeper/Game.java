@@ -10,7 +10,7 @@ public class Game {
 
     public static void newGame(String map) {
         answerMap = parseMap(map);
-        minesN = map.split("x").length;
+        minesN = map.split("x").length - 1;
     }
 
     public static void read(String map) {
