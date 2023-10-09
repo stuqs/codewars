@@ -10,7 +10,15 @@ public class Game {
 
     public static void newGame(String map) {
         answerMap = parseMap(map);
-        minesN = map.split("x").length - 1;
+
+        minesN = 0;
+        for (String[] strings : answerMap) {
+            for (String s : strings) {
+                if ("x".equalsIgnoreCase(s)) {
+                    minesN++;
+                }
+            }
+        }
     }
 
     public static void read(String map) {

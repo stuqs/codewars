@@ -55,11 +55,28 @@ public class MineSweeperTests {
                     "?"
             },
 
-
             {"Random test - 3",
                     "1 x 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0 0 1 2 2 1 0 0\n1 1 0 0 0 1 1 1 0 1 1 2 x x 2 1 1\nx 1 0 0 1 2 x 1 0 1 x 2 3 3 3 x 1\n1 1 0 0 1 x 2 1 0 1 1 1 1 x 2 1 1",
                     "? ? ? 0 0 0 0 0 0 0 0 0 0 0 0 0 0\n? ? ? 0 0 0 0 0 0 0 0 ? ? ? ? 0 0\n? ? 0 0 0 ? ? ? 0 ? ? ? ? ? ? ? ?\n? ? 0 0 ? ? ? ? 0 ? ? ? ? ? ? ? ?\n? ? 0 0 ? ? ? ? 0 ? ? ? ? ? ? ? ?",
                     "1 x 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0\n1 1 1 0 0 0 0 0 0 0 0 1 2 2 1 0 0\n1 1 0 0 0 1 1 1 0 1 1 2 x x 2 1 1\nx 1 0 0 1 2 x 1 0 1 x 2 3 3 3 x 1\n1 1 0 0 1 x 2 1 0 1 1 1 1 x 2 1 1"
+            },
+
+            {"More difficult test - 1",
+                    "0 0 0 0\n0 0 0 0\n1 1 0 0\nx 2 1 1\nx 3 1 x\nx 2 1 1\n1 1 0 0\n0 0 0 0\n0 0 0 0\n0 0 0 0",
+                    "0 0 0 0\n0 0 0 0\n? ? 0 0\n? ? ? ?\n? ? ? ?\n? ? ? ?\n? ? 0 0\n0 0 0 0\n0 0 0 0\n0 0 0 0",
+                    "0 0 0 0\n0 0 0 0\n1 1 0 0\nx 2 1 1\nx 3 1 x\nx 2 1 1\n1 1 0 0\n0 0 0 0\n0 0 0 0\n0 0 0 0"
+            },
+
+            {"More difficult test - 2",
+                    "0 0 0 0 0 0 0 0 0 0 0\n0 0 0 1 2 3 3 2 1 0 0\n0 0 1 3 x x x x 1 0 0\n0 0 2 x x x x 5 2 0 0\n0 0 3 x x x x x 2 0 0\n0 0 3 x x x x x 2 0 0\n0 0 2 x x x x 3 1 0 0\n0 0 1 2 3 3 2 1 0 0 0\n0 0 0 0 0 0 0 0 0 0 0",
+                    "0 0 0 0 0 0 0 0 0 0 0\n0 0 0 ? ? ? ? ? ? 0 0\n0 0 ? ? ? ? ? ? ? 0 0\n0 0 ? ? ? ? ? ? ? 0 0\n0 0 ? ? ? ? ? ? ? 0 0\n0 0 ? ? ? ? ? ? ? 0 0\n0 0 ? ? ? ? ? ? ? 0 0\n0 0 ? ? ? ? ? ? 0 0 0\n0 0 0 0 0 0 0 0 0 0 0",
+                    "0 0 0 0 0 0 0 0 0 0 0\n0 0 0 1 2 3 3 2 1 0 0\n0 0 1 3 x x x x 1 0 0\n0 0 2 x x x x 5 2 0 0\n0 0 3 x x x x x 2 0 0\n0 0 3 x x x x x 2 0 0\n0 0 2 x x x x 3 1 0 0\n0 0 1 2 3 3 2 1 0 0 0\n0 0 0 0 0 0 0 0 0 0 0"
+            },
+
+            {"More difficult test - 3",
+                    "0 0 0 0 0 0 0 0 0 0 0\n0 0 0 1 2 3 3 2 1 0 0\n0 0 1 3 x x x x 1 0 0\n0 0 2 x x 6 x 5 2 0 0\n0 0 3 x 4 4 x x 2 0 0\n0 0 3 x 5 5 x x 2 0 0\n0 0 2 x x x x 3 1 0 0\n0 0 1 2 3 3 2 1 0 0 0\n0 0 0 0 0 0 0 0 0 0 0",
+                    "0 0 0 0 0 0 0 0 0 0 0\n0 0 0 ? ? ? ? ? ? 0 0\n0 0 ? ? ? ? ? ? ? 0 0\n0 0 ? ? ? ? ? ? ? 0 0\n0 0 ? ? ? ? ? ? ? 0 0\n0 0 ? ? ? ? ? ? ? 0 0\n0 0 ? ? ? ? ? ? ? 0 0\n0 0 ? ? ? ? ? ? 0 0 0\n0 0 0 0 0 0 0 0 0 0 0",
+                    "0 0 0 0 0 0 0 0 0 0 0\n0 0 0 1 2 3 3 2 1 0 0\n0 0 1 3 x x x x 1 0 0\n0 0 2 x x 6 x 5 2 0 0\n0 0 3 x 4 4 x x 2 0 0\n0 0 3 x 5 5 x x 2 0 0\n0 0 2 x x x x 3 1 0 0\n0 0 1 2 3 3 2 1 0 0 0\n0 0 0 0 0 0 0 0 0 0 0"
             },
 
     };
@@ -80,10 +97,10 @@ public class MineSweeperTests {
 
     @Test
     public void sampleTests() {
-        for (String[] datum : DATA) {
-            Game.newGame(datum[1]);
-            Game.read(datum[2]);
-            makeAssertion_AndDisplay(datum[0], datum[3], new MineSweeper(datum[2], Game.getMinesN()).solve());
+        for (String[] data : DATA) {
+            Game.newGame(data[1]);
+            Game.read(data[2]);
+            makeAssertion_AndDisplay(data[0], data[3], new MineSweeper(data[2], Game.getMinesN()).solve());
         }
     }
 }
