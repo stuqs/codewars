@@ -95,6 +95,13 @@ public class BreakEvilPiecesTest {
                     "++\n++",
                     Arrays.asList("++\n++"),
                     ""},
+
+            // Test 21
+            new Object[]{"Homer's favorite!! (imbricated pieces)",
+                    "+----------+\n|          |\n|          |\n|          |\n|   +--+   |\n|   |  |   |\n|   |  |   |\n|   +--+   |\n|          |\n|          |\n|          |\n+----------+",
+                    Arrays.asList("+--+\n|  |\n|  |\n+--+",
+                            "+----------+\n|          |\n|          |\n|          |\n|   +--+   |\n|   |  |   |\n|   |  |   |\n|   +--+   |\n|          |\n|          |\n|          |\n+----------+"),
+                    ""},
     };
 
 
